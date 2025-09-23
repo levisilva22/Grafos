@@ -62,4 +62,3 @@ class Floyd(ReadFile, GraphAdjMatrix):
         n = self.nos[0] + 1
         soma = [None] * n
         c = 0
-
