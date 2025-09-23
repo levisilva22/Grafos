@@ -25,7 +25,11 @@ class Floyd(ReadFile, GraphAdjMatrix):
         GraphAdjMatrix.__init__(self, n = self.nos[0], directed = False)
         
         # Matriz de Distância
-        self.dist = [[float('inf')] * (self.nos[0] + 1) for _ in range(4, len(self.nos), 3)]
+        n = self.nos[0]
+        self.dist = [[float('inf') for _ in range(n+1)] for _ in range(n+1)]
+        
+        for i in range(n + 1):
+            self.dist[i][i] = 0
 
         # Construído a matriz de Recorrência
         for i in range(2, len(self.nos), 3):
@@ -40,6 +44,22 @@ class Floyd(ReadFile, GraphAdjMatrix):
             if not self.directed:
                 self.dist[w][v] = weight
 
+        
+    def _centralstation(self):
+        n = self.nos[0]
+        
+        # Algoritmo de Floyd-Warshall
+        for k in range(1, n + 1):
+            for i in range(1, n + 1):
+                for j in range(1, n + 1):
+                    if self.dist[i][k] + self.dist[k][j] < self.dist[i][j]:
+                        self.dist[i][j] = self.dist[i][k] + self.dist[k][j]
+                        self.M[i][j] = self.M[i][k]
+        return self.dist
 
+    def shortestpath(self):
+        dist = self._centralstation()
+        n = self.nos[0] + 1
+        soma = [None] * n
+        c = 0
 
-objeto = Floyd()
