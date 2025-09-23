@@ -8,7 +8,7 @@ class ReadFile:
 
     @property
     def openfile(self):
-        with open("Pratica_1_-_Grafos/graph1.txt", "r") as file:
+        with open("graph1.txt", "r") as file:
             readfile = file.read()
             linhas = readfile.split("\n")
             # Retirando a primeira linha do arquivo e usando list  comprehension para mudar o tipo para int.
@@ -60,5 +60,22 @@ class Floyd(ReadFile, GraphAdjMatrix):
     def shortestpath(self):
         dist = self._centralstation()
         n = self.nos[0] + 1
-        soma = [None] * n
-        c = 0
+        max_value = [0] * n
+       
+
+        for k in range(1, n):
+            dist_k = []
+            for i in range (n):
+               if k != i:
+                dist_k.append(dist[k][i])
+            max_value[k] = max(dist_k)
+        
+        centro = min(range(n), key=lambda x: max_value[x])
+    
+        return centro, max_value[centro], max_value 
+    
+
+
+objeto = Floyd()
+
+print(objeto.shortestpath())
