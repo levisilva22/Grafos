@@ -29,6 +29,9 @@ Os três valores (v1, v2, custo) em cada linha de aresta devem ser separados por
 Após definir o grafo com a formatação correta em graph1.txt, basta abrir o arquivo Python que é o cenario1.py e rodar o algoritmo.
 
 
+## Cenário 2
+
+**Para executar o cenário 2 é necessário apenas rodar o arquivo 'cenario 2.py'**
 
 ## Cenário 3
 Para executar o cenário 3 basta alterar a matriz em grid_example.txt
