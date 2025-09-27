@@ -1,0 +1,69 @@
+Abaixo serão feitas as comparações da aplicação python com o pseudocódigo base do algoritmo de Dijkstra:
+
+d (Distância)
+Equivalente: self.d (Lista/vetor de distâncias)
+Observações: Direta. Armazena d1i (a menor distância da origem ao vértice i). É uma lista de tamanho N+1 (self.graph.n + 1) para suportar a **indexação baseada em 1** do grafo (de 1 a N). Inicializado com math.inf (INF).
+
+anterior(i)
+Equivalente: self.anterior (Lista/vetor de predecessores)
+Observações: Direta. Armazena o índice do vértice predecessor para reconstruir o caminho. É uma lista de tamanho N+1 para suportar a **indexação baseada em 1** do grafo. É a variável que recebe o 'r' na atualização 'anterior(l) <- r'. Inicializado com None.
+
+V (Conjunto de todos os vértices)
+Equivalente: self.V (Range de índices de 1 a N)
+Observações: Conceitual. É definido como o range de 1 a self.graph.n + 1. Cada índice **baseado em 1** representa uma célula do grid, conforme a convenção da classe GraphAdjMatrix (uteis.py).
+
+r (Vértice de origem/Start)
+Equivalente: self.r_origem
+Observações: Direta. É o índice **baseado em 1** do nó inicial ('S'), obtido pela função converter.get_start_node().
+
+infinito (∞)
+Equivalente: self.INF = math.inf
+Observações: Direta. Representa a distância inicial desconhecida para a maioria dos vértices.
+
+A (Conjunto de vértices Abertos)
+Equivalente: self.A (Set/Conjunto Python)
+Observações: Direta. Contém os índices **baseados em 1** dos vértices que ainda não tiveram seu menor caminho finalizado.
+
+F (Conjunto de vértices Fechados)
+Equivalente: self.F (Set/Conjunto Python)
+Observações: Direta. Contém os índices **baseados em 1** dos vértices que já foram processados.
+
+d_1r <- 0 (Inicialização)
+Equivalente: self.d[self.r_origem] = 0
+Observações: Direta. Define a distância da origem a si mesma como zero.
+
+enquanto A != Ø fazer (Laço principal)
+Equivalente: while self.A:
+Observações: Direta. O laço de repetição do algoritmo continua enquanto o conjunto de vértices abertos não estiver vazio.
+
+r <- v em V | d_1r = min{d_1j}, j em A (Extração do Mínimo)
+Equivalente: Bloco de código com 'for j in self.A:' e 'if self.d[j] < min_dist:'
+Observações: Funcional. Busca o vértice 'j' no conjunto A que possui a menor distância d[j], que se torna o vértice 'r'.
+
+F <- F U {r}; A <- A - {r} (Marcação de Fechado)
+Equivalente: self.F.add(r); self.A.remove(r)
+Observações: Direta. Move o vértice 'r' de Abertos (A) para Fechados (F).
+
+S <- A ∩ N'(r) (Sucessores Abertos)
+Equivalente: Chamada a 'self.graph.getNeighbors(r)' e checagem 'if l_vizinho_index in self.A:'
+Observações: Funcional. Usa o método **getNeighbors** da classe WeightedGridGraph para iterar sobre os vizinhos alcançáveis (N'(r)) e verifica se o vizinho 'l' ainda está no conjunto A (S).
+
+v_rl (Custo da aresta de r para l)
+Equivalente: custo_movimento_v_rl
+Observações: Conceitual. O custo (peso) é recuperado **diretamente** da iteração de self.graph.getNeighbors(r), onde foi armazenado na matriz M durante a construção do grafo.
+
+p <- min [ d_1l, (d_1r + v_rl) ] (Relaxamento)
+Equivalente: nova_soma = self.d[r] + custo_movimento_v_rl
+Observações: Parcial. O código calcula o termo (d_1r + v_rl) como 'nova_soma', que é a nova distância potencial para 'l'.
+
+se p < d_1l então (Condição de Atualização)
+Equivalente: if nova_soma < self.d[l_vizinho_index]:
+Observações: Direta. Verifica se o novo caminho ('nova_soma') é mais curto que o caminho atual ('d_1l').
+
+d_1l <- p (Atualização da Distância)
+Equivalente: self.d[l_vizinho_index] = nova_soma
+Observações: Direta. A distância para o vizinho 'l' é atualizada.
+
+anterior(l) <- r (Atualização do Predecessor)
+Equivalente: self.anterior[l_vizinho_index] = r
+Observações: Direta. O vértice atual 'r' é registrado como o predecessor de 'l'.
