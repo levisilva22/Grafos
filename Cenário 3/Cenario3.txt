@@ -1,0 +1,25 @@
+Cenário 3: Robô de armazém com obstáculos
+
+Um robô de inventário precisa ir do ponto de recarga (S) até a docking station de coleta (G)
+dentro de um armazém. Há estantes (obstáculos), corredores livres e trechos de piso difícil
+(ex.: área com pallets baixos) com custo maior. A ideia é propor um mecanismo de busca
+em grafo que permita encontrar o caminho de menor custo do S ao G, desviando de
+obstáculos e preferindo corredores “baratos”.
+O mapa é definido como um grid, seguindo as seguintes regras:
+
+*   '=' célula livre (custo 1)
+*   "#" obstáculo (intransponível)
+*   '~' piso difícil (custo 3)
+*   'S' = início;
+*   'G' = objetivo
+
+movimento em 4-direções (N,S,L,O)
+O arquivo de grid exemplo começa com a definição do número de linhas e colunas, e
+então as linhas seguintes contém os caracteres apresentados anteriormente. Ver
+arquivo grid_example.txt para referência.
+
+Algoritmo Escolhido: Para este cenário foi escolhido o algoritmo de Dijkstra pelos seguintes motivos:
+
+1. É um algoritmo eficiente para encontrar o menor caminho de um vértice a outro;
+2. O problema não contém arestas de peso negativo;
+3. Vértice inicial e Objetivo muito bem definidos, ou seja, não é necessário encontrar os menores caminhos para todos os pares de vértice, somente entre S e G.
