@@ -1,0 +1,28 @@
+
+Encapsulamento (Orientação a Objetos):
+
+
+   Pseudocódigo: É puramente procedural. Ele recebe uma matriz, processa e retorna uma nova matriz.
+
+   Cenario1:  Utiliza uma classe RedeDeMetro. Isso é uma grande vantagem, pois encapsula os dados (a matriz_custos) e as operações que podem ser realizadas sobre eles (adicionar_trecho, calcular_todas_rotas_floyd_warshall, etc.) em um único objeto. Isso torna o código mais organizado, reutilizável e fácil de entender.
+
+
+Representação do Infinito:
+
+   Pseudocódigo: Usa o símbolo ∞.
+
+   Cenario1:  Usa float('inf'), que é a forma padrão e correta de representar um valor infinito em Python para comparações numéricas.
+
+Indexação de Vértices:
+
+
+   Pseudocódigo: Assume uma indexação baseada em 1 (de 1 até n), que é comum em descrições teóricas de algoritmos.
+
+   Cenario1: Usa indexação baseada em 0 (de 0 a n-1), que é o padrão em Python e na maioria das linguagens de programação. O seu código lida com isso de forma elegante no método adicionar_trecho ao converter os índices (idx_a, idx_b = estacao_a - 1, estacao_b - 1).
+
+Clareza e Legibilidade:
+
+   Sua implementação usa nomes de variáveis e métodos descritivos (RedeDeMetro, matriz_custos, calcular_todas_rotas_floyd_warshall), o que torna o propósito do código muito claro, diferente das variáveis de uma única letra (D, i, j, k) do pseudocódigo, que são concisas mas menos descritivas fora do contexto do algoritmo.
+
+Conclusão: 
+    Visto tudo isso podemos concluir que a implementação é uma boa adaptação do algoritimo teórico para um cenário que foi colocado em prática 
