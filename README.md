@@ -7,7 +7,7 @@ Cleiber de Meireles
 
 ## Cenário 1 
 
-**Para executar o cenário 1 é necessário apenas rodar o arquivo 'cenario 1.py' em algum compilador, por exemplo o Visual Studio Code**
+**Para executar o cenário 1 é necessário apenas rodar o arquivo 'cenario 1.py' em algum compilador, por exemplo o Visual Studio Code com o arquivo graph1.txt na mesma pasta**
 
 ## Cenário 2
 
