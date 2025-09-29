@@ -1,4 +1,10 @@
 ### TEORIA DOS GRAFOS
+**Alunos:**
+
+Levi Farias  
+Estevão Pessoa  
+Cleiber  
+
 ## Cenário 1 
 Para executar o cenário 1, basta alterar o grafo no arquivo graph1.txt, respeitando a formatação que o script cenario1.py espera:
 

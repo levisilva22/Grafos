@@ -8,7 +8,7 @@ class ReadFile:
 
     @property
     def openfile(self):
-        with open("graph2.txt", "r") as file:
+        with open("Cenario 2/graph2.txt", "r") as file:
             readfile = file.read()
             linhas = readfile.split("\n")
             # Retirando a primeira linha do arquivo e usando list  comprehension para mudar o tipo para int.
