@@ -68,7 +68,7 @@ class BellmanFord(ReadFile, GraphAdjMatrix):
     def reconstruir_caminho(self, origem, destino):
         """Reconstrói o caminho usando a matriz de roteamento R"""
         if self.dist[origem][destino] == float('inf'):
-            return None  # Não há caminho
+            return None  
         
         caminho = [origem]
         atual = origem
