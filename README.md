@@ -3,7 +3,7 @@
 
 Levi Farias  
 Estevão Pessoa  
-Cleiber  
+Cleiber de Meireles
 
 ## Cenário 1 
 Para executar o cenário 1, basta alterar o grafo no arquivo graph1.txt, respeitando a formatação que o script cenario1.py espera:
