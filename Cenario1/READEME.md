@@ -47,19 +47,6 @@ FIM ALGORITMO
                       self.matriz_custos[i][j] = custo_via_k
 ```
 
-| **Pseudocódigo** | **Código Python** | **Explicação** |
-|------------------|-------------------|----------------|
-| `dados G = (V,E); matriz de valores V(G)` | `GraphAdjMatrix.__init__(self, n = self.nos[0], directed = True)` | Inicialização do grafo com vértices e arestas |
-| `D⁰ = [dᵢⱼ] ← V(G)` | `self.dist = [[float('inf') for _ in range(n)] for _ in range(n)]` | Criação da matriz de distâncias inicial |
-| `rᵢⱼ ← j ∀i` | `self.M[v][w] = w (arquivo uteis - class GraphAdjMatrix - método addEdge)` | Inicialização da matriz de roteamento |
-| `para k = 1, ..., n fazer` | `for k in range(self.nos[0]):` | Loop externo do vértice intermediário k |
-| `para todo i, j = 1, ..., n fazer` | `for i in range(self.nos[0]):`<br>`for j in range(self.nos[0]):` | Loops aninhados para todos os pares (i,j) |
-| `se dᵢₖ + dₖⱼ < dᵢⱼ então` | `if matriz_dist[i][k] + matriz_dist[k][j] < matriz_dist[i][j]:` | Condição de relaxamento da distância |
-| `dᵢⱼ ← dᵢₖ + dₖⱼ` | `matriz_dist[i][j] = matriz_dist[i][k] + matriz_dist[k][j]` | Atualização da distância mínima |
-| `rᵢⱼ ← rᵢₖ` | `self.M[i][j] = self.M[i][k]` | Atualização da matriz de roteamento |
-
-
-
 | **Pseudocódigo** | **Código Python** | **Correspondência** |
 |------------------|-------------------|---------------------|
 |`PARA k DE 1 ATÉ n` |`for k in range(self.num_estacoes):`|` Laço do vértice intermediário (pivot).`|
