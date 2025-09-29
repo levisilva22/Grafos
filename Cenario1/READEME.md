@@ -62,11 +62,11 @@ FIM ALGORITMO
 
 | **Pseudocódigo** | **Código Python** | **Correspondência** |
 |------------------|-------------------|---------------------|
-|`PARA k DE 1 ATÉ n` |	for k in range(self.num_estacoes):|	Laço do vértice intermediário (pivot).`|
-|`PARA i DE 1 ATÉ n` |for i in range(self.num_estacoes):|	Laço do vértice de origem.`|
-|`PARA j DE 1 ATÉ n` |	for j in range(self.num_estacoes):`|` Laço do vértice de destino.`|
-|`D[i][k] + D[k][j]|`	self.matriz_custos[i][k] + self.matriz_custos[k][j]`|`	O custo de ir de i a j via k.`|
-|`SE (...) ENTÃO D[i][j] = (...)`|	`if custo_via_k < self.matriz_custos[i][j]:`|`	A condição de relaxamento (atualização).`|
+|`PARA k DE 1 ATÉ n` |`for k in range(self.num_estacoes):`|` Laço do vértice intermediário (pivot).`|
+|`PARA i DE 1 ATÉ n` |`for i in range(self.num_estacoes): |` Laço do vértice de origem.`|
+|`PARA j DE 1 ATÉ n` |`for j in range(self.num_estacoes):`|` Laço do vértice de destino.`|
+|`D[i][k] + D[k][j]`|` self.matriz_custos[i][k] + self.matriz_custos[k][j]`|`O custo de ir de i a j via k.`|
+|`SE (...) ENTÃO D[i][j] = (...)`|	`if custo_via_k < self.matriz_custos[i][j]:`|`A condição de relaxamento (atualização).`|
 
 
 
