@@ -6,34 +6,8 @@ Estevão Pessoa
 Cleiber de Meireles
 
 ## Cenário 1 
-Para executar o cenário 1, basta alterar o grafo no arquivo graph1.txt, respeitando a formatação que o script cenario1.py espera:
 
-i j
-
-v1 v2 custo
-
-v1 v2 custo
-
-.
-
-.
-
-.
-
-A primeira linha deve conter o número de vértices i (estações) e o número de arestas j (conexões), separados por um espaço.
-
-As j linhas seguintes devem definir cada aresta no formato v1 v2 custo, onde:
-
-v1 é o número da estação de origem.
-
-v2 é o número da estação de destino.
-
-custo é o peso numérico (distância) da conexão entre v1 e v2.
-
-Os três valores (v1, v2, custo) em cada linha de aresta devem ser separados por espaços.
-
-Após definir o grafo com a formatação correta em graph1.txt, basta abrir o arquivo Python que é o cenario1.py e rodar o algoritmo.
-
+**Para executar o cenário 1 é necessário apenas rodar o arquivo 'cenario 1.py' em algum compilador, por exemplo o Visual Studio Code**
 
 ## Cenário 2
 
